@@ -1,0 +1,14 @@
+.navbar-nav {
+  margin-left: 650px !important;
+}
+
+.navbar-brand {
+  padding-bottom: 40px;
+  font-size: 20px;
+}
+
+ul>li {
+  font-size: 15px;
+  font-weight: bolder;
+  color: #ffffff;
+}

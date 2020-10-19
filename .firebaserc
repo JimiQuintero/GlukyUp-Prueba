@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "gluky-login": {
+      "hosting": {
+        "gluky-test": [
+          "gluky-login"
+        ]
+      }
+    }
+  }
+}

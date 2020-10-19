@@ -1,0 +1,109 @@
+<div class="container">
+  <div id="signupbox" style="margin-top:50px"
+  class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <div class="panel-title">
+        REGISTRATE <br>
+        <small>Es gratis y lo será siempre</small>
+      </div>
+        <div style="float:right; font-size: 85%; position: relative; top:-10px">
+          <a id="signinlink" [routerLink]="['/login']">
+            ¿Ya tienes cuenta?/Ingresa
+          </a>
+        </div>
+      </div>
+      <div class="panel-body">
+        <form class="form-horizontal" autocomplete="off" (ngSubmit)= "onSubmit( formulario )" #formulario = "ngForm">
+
+          <div class="form-group">
+            <label for="email" class="col-md-3 control-label">Email</label>
+              <div class="col-md-9">
+                <input class="form-control"
+                       type="email"
+                       name="email"
+                       placeholder="pepitodejesus@gmail.com"
+                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                       required
+                       [(ngModel)]="usuario.email"
+                       [class.is-invalid]="email.invalid && email.touched"
+                       #email="ngModel">
+                    <small *ngIf="email.invalid && email.touched"
+                       class="form-text text-danger">El email es requerido</small>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label for="firstname" class="col-md-3 control-label">Nombre</label>
+              <div class="col-md-9">
+                <input class="form-control"
+                       type="text"
+                       name="nombre"
+                       placeholder="Indique su nombre"
+                       required
+                       minlength="3"
+                       [(ngModel)]="usuario.nombre"
+                       [class.is-invalid]="nombre.invalid && nombre.touched"
+                       #nombre="ngModel">
+                    <small *ngIf="nombre.invalid && nombre.touched"
+               class="form-text text-danger">El nombre es requerido</small>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label for="lastname" class="col-md-3 control-label">Apellido</label>
+              <div class="col-md-9">
+                <input class="form-control"
+                       type="text"
+                       name="apellido"
+                       placeholder="Indique su apellido"
+                       required
+                       minlength="4"
+                       [(ngModel)]="usuario.apellido"
+                       [class.is-invalid]="apellido.invalid && apellido.touched"
+                       #apellido="ngModel">
+                    <small *ngIf="apellido.invalid && apellido.touched"
+               class="form-text text-danger">El apellido es requerido</small>
+
+              </div>
+          </div>
+          <div class="form-group">
+            <label for="password" class="col-md-3 control-label">Password</label>
+            <div class="col-md-9">
+              <input class="form-control"
+                     type="password"
+                     name="password"
+                     placeholder="password"
+                     required
+                     minlength="6"
+                     [(ngModel)]="usuario.password"
+                     [class.is-invalid]="password.invalid && password.touched"
+                     #password="ngModel">
+                  <small *ngIf="password.invalid &&password.touched"
+               class="form-text text-danger">La contraseña debe de ser más de 6 dígitos</small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <!-- Button -->
+            <div class="col-md-offset-3 col-md-9">
+              <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i>
+                Crear cuenta
+              </button>
+              <span style="margin-left:8px;">o</span>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid #999; padding-top:20px" class="form-group">
+
+            <div class="col-md-offset-3 col-md-9">
+              <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>
+                Ingresa con Facebook
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

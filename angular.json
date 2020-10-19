@@ -117,8 +117,13 @@
               "devServerTarget": "gluky-test:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "gluky-test"
 }
